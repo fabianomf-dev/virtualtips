@@ -31,13 +31,13 @@ export default function Index() {
                 O Virtual Tips é uma ferramenta de dicas de apostas esportivas, oferecendo estatísticas em tempo real, análises de especialistas e informações valiosas para aprimorar suas estratégias.
               </p>
               <div className="mt-12">
-                <a
+                <Link
                   href="#"
                   rel="noopener noreferrer"
                   className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                 >
                   Quero Começar!
-                </a>
+                </Link>
 
               </div>
             </div>

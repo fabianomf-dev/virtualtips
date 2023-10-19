@@ -84,7 +84,7 @@ export default function Termos() {
                                     href="https://polygonscan.com/token/0x975b5fee213d48364a87f580d7565cce80ab3f3d"
                                     target="_blank"
                                 >
-                                    <h4 className="font-semibold text-blueGray-500">Polygonscan VTIP</h4>
+                                    Polygonscan VTIP
                                 </Link>
                             </p>
                             <p className="text-blueGray-500 text-left text-lg leading-relaxed mt-4 mb-4">
