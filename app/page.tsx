@@ -379,7 +379,7 @@ export default function Index() {
                 </span>
               </p>
               <h3 className="font-semibold text-blueGray-500 text-3xl">
-                "Curta nossas redes Sociais e Ganhe token VTIP Grátis"
+                Curta nossas redes Sociais e Ganhe token VTIP Grátis
               </h3>
               <p className="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
                 O nosso bot, Virtualtips, é alimentado pelo token VTIP na rede Polygon,
