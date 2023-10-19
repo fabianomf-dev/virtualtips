@@ -171,7 +171,7 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="container mx-auto overflow-hidden pb-20">
+        {/* <div className="container mx-auto overflow-hidden pb-20">
           <div className="flex flex-wrap items-center">
             <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
               <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
@@ -243,7 +243,7 @@ export default function Index() {
           </div>
 
 
-        </div>
+        </div> */}
 
         <div className="container mx-auto px-4 pb-32 pt-2">
           <div className="items-center flex flex-wrap">
