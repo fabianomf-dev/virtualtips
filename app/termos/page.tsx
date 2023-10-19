@@ -66,7 +66,7 @@ export default function Termos() {
                 <strong>4.</strong>O bot Virtualtips não tem controle sobre a precisão, atualidade ou autenticidade das informações obtidas de fontes externas, e não pode garantir a qualidade ou a confiabilidade desses dados.
               </p>
               <p className="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
-                <strong>5.</strong>O usuário concorda em usar o serviço com discernimento e responsabilidade, compreendendo que todas as informações disponibilizadas são fornecidas "como estão" e por sua própria conta e risco.
+                <strong>5.</strong>O usuário concorda em usar o serviço com discernimento e responsabilidade, compreendendo que todas as informações disponibilizadas são fornecidas {'"como estão"'} e por sua própria conta e risco.
               </p>
               <p className="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
                 <strong>6.</strong>O bot Virtualtips reserva-se o direito de fazer alterações nos serviços, incluindo a interrupção temporária ou permanente do acesso, a seu critério, sem aviso prévio.
