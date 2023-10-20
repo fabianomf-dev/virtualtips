@@ -1,12 +1,22 @@
 'use client'
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 // components
 
 import IndexDropdownLigas from "../Dropdowns/IndexDropdownLigas";
-
+import ModalGetToken from "../ModalGetToken"
 export default function Navbar(props: any) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [userIP, setUserIP] = useState(null);
+  const cancelButtonRef = useRef(null);
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
   return (
     <>
       <nav className="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow">
@@ -21,7 +31,7 @@ export default function Navbar(props: any) {
               <div className="flex items-center">
 
                 <img
-                  className="h-8 w-auto ml-10"
+                  className="h-8 w-auto ml-2 mr-3"
                   src="/img/logo.png"
                   alt="..."
                 />
@@ -36,7 +46,7 @@ export default function Navbar(props: any) {
             >
               <i className="fas fa-bars"></i>
             </button>
-            
+
           </div>
           <div
             className={
@@ -45,13 +55,13 @@ export default function Navbar(props: any) {
             }
             id="example-navbar-warning"
           >
-            
+
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-            <li className="flex items-center">
-            <IndexDropdownLigas/>
+              <li className="flex items-center">
+                <IndexDropdownLigas />
               </li>
-            <li className="flex items-center">
-              <Link
+              <li className="flex items-center">
+                <Link
                   rel="noopener noreferrer"
                   className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   href="/token"
@@ -60,7 +70,7 @@ export default function Navbar(props: any) {
                 </Link>
               </li>
               <li className="flex items-center">
-              <Link
+                <Link
                   rel="noopener noreferrer"
                   className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   href="/sobre"
@@ -103,6 +113,17 @@ export default function Navbar(props: any) {
                   <span className="lg:hidden inline-block ml-2">Telegram</span>
                 </Link>
               </li>
+              <li className="flex items-center">
+                <Link
+                  rel="noopener noreferrer"
+                  href="#"
+                  onClick={openModal}
+                  className="bg-lightBlue-500 text-white active:bg-lightBlue-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-3 lg:mb-0 ml-6 mb-3 ease-linear transition-all duration-150"
+                >
+                  Ganhe VTIP Grátis
+                </Link>
+              </li>
+              <ModalGetToken open={modalOpen} setOpen={closeModal} cancelButtonRef={cancelButtonRef} />
 
               <li className="flex items-center">
                 <button
