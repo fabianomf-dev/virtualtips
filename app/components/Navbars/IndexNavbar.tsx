@@ -21,7 +21,7 @@ export default function Navbar(props: any) {
               <div className="flex items-center">
 
                 <img
-                  className="h-8 w-auto ml-2"
+                  className="h-8 w-auto ml-10"
                   src="/img/logo.png"
                   alt="..."
                 />
