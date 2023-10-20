@@ -1,13 +1,13 @@
 'use client'
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-
 import IndexNavbar from "./components/Navbars/IndexNavbar";
 import Footer from "./components/Footers/Footer";
 import ModalGetToken from "./components/ModalGetToken"
 
 export default function Index() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [userIP, setUserIP] = useState(null);
   const cancelButtonRef = useRef(null);
   const openModal = () => {
     setModalOpen(true);
@@ -16,6 +16,25 @@ export default function Index() {
   const closeModal = () => {
     setModalOpen(false);
   };
+
+  useEffect(() => {
+    // Função para obter o endereço IP do cliente
+    async function fetchUserIP() {
+      try {
+        const response = await fetch('/api/ip'); // Endpoint que criamos
+        if (response.ok) {
+          const data = await response.json();
+          setUserIP(data.userIP);
+        } else {
+          console.error('Erro ao obter o endereço IP');
+        }
+      } catch (error) {
+        console.error('Erro ao buscar o endereço IP', error);
+      }
+    }
+
+    fetchUserIP(); // Chama a função para buscar o endereço IP ao montar o componente
+  }, []);
   return (
     <>
       <IndexNavbar fixed />

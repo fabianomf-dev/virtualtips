@@ -16,7 +16,7 @@ export default function Example(props: { open: any; setOpen: any; cancelButtonRe
     const [carteira, setCarteira] = useState<string>('')
 
 
-    const sendDados = () => {
+    const sendDados = async () => {
         // Verifique se pelo menos um checkbox está marcado
         if (!checkPerfilFacebook && !checkPerfilX && !checkPerfilTelegram) {
             alert('Pelo menos um perfil deve ser selecionado.');
@@ -51,11 +51,21 @@ export default function Example(props: { open: any; setOpen: any; cancelButtonRe
             "telegram": telegram
 
         }
-        axios.post("", JSON.stringify(dados))
+        console.log(dados)
+        await axios.post("https://apibotcrypto.fabiano.dev.br/token-free", dados)
             .then(response => {
                 // Manipule a resposta de sucesso aqui
                 console.log('Resposta de sucesso:', response.data);
-                alert('Dados enviados com sucesso!\n assim que os dados forem verificados você receberá um\n email com o hash da transferência.\n ou se completou a tarefa do telegram receberá uma messagem no Telegramconfirmando seus tokens');
+                if (response.data) {
+
+                    alert('Dados enviados com sucesso!\n assim que os dados forem verificados você receberá um\n email com o hash da transferência.\n ou se completou a tarefa do telegram receberá uma messagem no Telegram confirmando seus tokens');
+                    setOpen(false)
+                    setCheckPerfilFacebook(false)
+                    setCheckPerfilTelegram(false)
+                    setCheckPerfilX(false)
+                } else {
+                    alert("verifique seus dados algumas informações que você forneceu já foram usadas!")
+                }
             })
             .catch(error => {
                 // Manipule erros aqui
